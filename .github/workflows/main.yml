@@ -1,0 +1,93 @@
+site_name: Splunk OpenTelemetry Workshop
+site_url: https://github.com/IsmaelKP2/otelworkshop
+site_author: copy from Steve Lerner Staff Sales Engineer USA
+site_description: >-
+  Learn to configure the Splunk OpenTelemetry Connector for APM and Infrastructure Monitoring as well as instrument applications with OpenTelemetry APM instrumentation to send telemetry to Splunk APM
+repo_url: https://github.com/IsmaelKP2/otelworkshop
+edit_uri: ""
+copyright: Copyright 2021 Splunk Inc. All rights reserved.
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  favicon: images/favicon.ico
+  logo: images/logo.png
+  font:
+    text: "Century Gothic"
+    code: Roboto Mono
+  include_search_page: false
+  search_index_only: true
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+   # - toc.integrate
+
+markdown_extensions:
+  - footnotes
+  - admonition
+  - attr_list
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/signalfx/otelworkshop
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/splunk
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/splunk/
+
+plugins:
+  - minify:
+      minify_html: false
+
+nav:
+  - Home: index.md
+  - OpenTelemetry Workshop:
+    - Introduction: introduction/index.md
+    - Preparation: apm/workshop-steps/prep.md
+    - Labs:
+      - APM for a Single Host (Execute in Order):
+        - 1. Install Otel Collector On Host: apm/host/index.md
+        - 2. Python- Deploy HTTP Server and Client: apm/host/python.md
+        - 3. Java- Deploy HTTP Client: apm/host/java.md
+        - 4. Node.js- Deploy HTTP Client: apm/host/node.md
+      - APM for K8s / containerized apps:
+        - APM for k8s: apm/k8s/index.md
+      - OPTIONAL/ADVANCED:
+        - Otel Collector and APM for Docker: apm/docker/index.md
+    - Guides:
+      - APM Examples:
+        - ECS-EC2: apm/ecs/index-ec2.md
+        - ECS-Fargate: apm/ecs/index-fargate.md
